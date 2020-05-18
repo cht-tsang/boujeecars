@@ -3,9 +3,15 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   padding: 88px;
+  text-decoration: none;
 }
 
-.card-category { 
+.cards a {
+  text-decoration: none;
+  // transition:0.3s;
+}
+
+#home-card {
   background-size: cover; 
   background-position: center; 
   height: 400px; 
@@ -16,10 +22,131 @@
   font-size: 24px; 
   font-weight: bold; 
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2); 
-  border-radius: 5px; 
+  border-radius: 16px; 
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 24px;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
 }
+
+#home-card:hover {
+  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+  height: 420px;
+}
+
+#home-card:hover:before, #home-card:hover:after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 597.5px;
+  height: 420px;
+  background: #FDA8CF;
+  border-radius: 16px;
+  z-index: -1;
+  animation: 1s clockwise infinite;
+}
+
+#home-card:hover:after {
+  background: #F3CE5E;
+  animation: 2s counterclockwise infinite;
+}
+
+@keyframes clockwise {
+  0% {
+    top: -8px;
+    left: 0;
+  }
+  12% {
+    top: -4px;
+    left: 4px;
+  }
+  25% {
+    top: 0;
+    left: 8px;    
+  }
+  37% {
+    top: 4px;
+    left: 4px;
+  }
+  50% {
+    top: 8px;
+    left: 0;    
+  }
+  62% {
+    top: 4px;
+    left: -4px;
+  }
+  75% {
+    top: 0;
+    left: -8px;
+  }
+  87% {
+    top: -4px;
+    left: -4px;
+  }
+  100% {
+    top: -8px;
+    left: 0;    
+  }
+}
+
+@keyframes counterclockwise {
+  0% {
+    top: -10px;
+    right: 0;
+  }
+  12% {
+    top: -6px;
+    right: 6px;
+  }
+  25% {
+    top: 0;
+    right: 10px;    
+  }
+  37% {
+    top: 6px;
+    right: 6px;
+  }
+  50% {
+    top: 10px;
+    right: 0;    
+  }
+  62% {
+    top: 6px;
+    right: -6px;
+  }
+  75% {
+    top: 0;
+    right: -10px;
+  }
+  87% {
+    top: -6px;
+    right: -6px;
+  }
+  100% {
+    top: -10px;
+    right: 0;    
+  }
+}
+
+
+
+// .card-category { 
+//   background-size: cover; 
+//   background-position: center; 
+//   height: 400px; 
+//   display: flex; 
+//   justify-content: center; 
+//   align-items: center; 
+//   color: white; 
+//   font-size: 24px; 
+//   font-weight: bold; 
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2); 
+//   border-radius: 5px; 
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   margin: 24px;
+// }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
