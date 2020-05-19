@@ -1,0 +1,7 @@
+<%= simple_form_for(@car) do |f| %>
+  <p><%= f.input :make %></p>
+  <p><%= f.input :model %></p>
+  <p><%= f.input :price %></p>
+  <p><%= f.input :photo, as: :file %></p>
+  <p><%= f.submit %></p>
+<% end %>
