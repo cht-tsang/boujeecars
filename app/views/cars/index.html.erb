@@ -1,0 +1,9 @@
+<div class="cards">
+  <% @cars.each do |car| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://cdn.motor1.com/images/mgl/A8Jkx/s1/maserati-granturismo-zeda.jpg')">
+      <%= link_to car.model, car %>
+    </div>
+  <% end %>
+</div>
+
+<%# <%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>
