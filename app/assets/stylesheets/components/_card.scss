@@ -41,14 +41,14 @@
   position: absolute;
   width: 597.5px;
   height: 420px;
-  background: #FDA8CF;
+  background: #ff5500;
   border-radius: 16px;
   z-index: -1;
   animation: 1s clockwise infinite;
 }
 
 #home-card:hover:after {
-  background: #F3CE5E;
+  background: #4b8bf4;
   animation: 2s counterclockwise infinite;
 }
 
