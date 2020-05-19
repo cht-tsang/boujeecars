@@ -5,4 +5,6 @@ class Car < ApplicationRecord
   validates :make, presence: true
   validates :model, presence: true
   validates :price, presence: true
+
+  has_one_attached :photo
 end
