@@ -12,17 +12,17 @@
 }
 
 #home-card {
-  background-size: cover; 
-  background-position: center; 
-  height: 400px; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  color: white; 
-  font-size: 24px; 
-  font-weight: bold; 
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2); 
-  border-radius: 16px; 
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 16px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 24px;
   text-decoration: none;
@@ -63,7 +63,7 @@
   }
   25% {
     top: 0;
-    left: 8px;    
+    left: 8px;
   }
   37% {
     top: 4px;
@@ -71,7 +71,7 @@
   }
   50% {
     top: 8px;
-    left: 0;    
+    left: 0;
   }
   62% {
     top: 4px;
@@ -87,7 +87,7 @@
   }
   100% {
     top: -8px;
-    left: 0;    
+    left: 0;
   }
 }
 
@@ -102,7 +102,7 @@
   }
   25% {
     top: 0;
-    right: 10px;    
+    right: 10px;
   }
   37% {
     top: 6px;
@@ -110,7 +110,7 @@
   }
   50% {
     top: 10px;
-    right: 0;    
+    right: 0;
   }
   62% {
     top: 6px;
@@ -126,11 +126,48 @@
   }
   100% {
     top: -10px;
-    right: 0;    
+    right: 0;
   }
 }
 
+.card-car {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
 
+.card-car > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-car h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-car p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-car .card-car-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-car-infos .card-car-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
 
 .card-category { 
   background-size: cover; 
