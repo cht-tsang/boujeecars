@@ -8,12 +8,12 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @car = Car.find(params[:id])
+    @car = Car.find(params[:car_id])
     @booking = Booking.new
   end
 
   def create
-    @car = Car.find(params[:id])
+    @car = Car.find(params[:car_id])
     @booking = Booking.new(booking_params)
     @booking.car = @car
     @booking.user = current_user
@@ -25,13 +25,15 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @car = Car.find(params[:car_id])
     @booking = Booking.find(params[:id])
   end
 
   def update
+    @car = Car.find(params[:car_id])
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+    redirect_to car_booking_path(@booking)
   end
 
   def destroy
