@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.car = @car
     @booking.user = current_user
     if @booking.save
-      redirect_to car_path(@car)
+      redirect_to car_booking_path(@car, @booking)
     else
       render :new
     end
@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:car_id])
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to car_booking_path(@booking)
+    redirect_to car_booking_path(@car, @booking)
   end
 
   def destroy
