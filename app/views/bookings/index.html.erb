@@ -1,7 +1,7 @@
 <div class="cards">
-  <% @bookings.each do |booking| %>
-    <ul>
-    <li> <%= link_to booking.car.make, booking_path(booking) %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li> <%= booking.car.make %> - <%= booking.car.model %> - <%= link_to "your booking", car_booking_path(booking.car_id, booking) %></li>
+    <% end %>
+  </ul>
 </div>
