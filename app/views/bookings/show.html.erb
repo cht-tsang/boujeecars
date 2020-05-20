@@ -5,8 +5,8 @@
   <div class="card-car-infos">
 
     <div>
-      <h2>Start date: <%= @booking.start_date %> </h2>
-      <h2>End Date: <%= @booking.end_date %></h2>
+      <h2>Start date: <%= @booking.start_date.strftime("%d / %m / %Y") %> </h2>
+      <h2>End Date: <%= @booking.end_date.strftime(" %d / %m / %Y") %></h2>
       <h2>Car Make: <%= @booking.car.make %></h2>
       <h2>Car Model: <%= @booking.car.model %></h2>
       <h2>Car Price: £<%= @booking.car.price %>p/d</h2>
