@@ -37,9 +37,9 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @dose = Dose.find(params[:id])
-    @Booking.destroy
-    redirect_to car_path(@booking.car)
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private
