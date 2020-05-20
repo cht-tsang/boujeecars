@@ -185,6 +185,10 @@
   margin: 24px;
 }
 
+.card-category :hover {
+  color: white;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards-f {

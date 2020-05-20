@@ -1,7 +1,8 @@
+<h2>My Bookings</h2>
 <div class="cards">
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li> <%= booking.car.make %> - <%= booking.car.model %> - <%= link_to "your booking", car_booking_path(booking.car_id, booking) %></li>
-    <% end %>
-  </ul>
+  <% @bookings.each do |booking| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.car.photo.key, height: 300, width: 400, crop: :fill %>')">
+      <%= link_to booking.car.make + " " + booking.car.model + " Booking", car_booking_path(booking.car_id, booking) %>
+      </div>
+  <% end %>
 </div>
