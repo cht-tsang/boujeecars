@@ -6,6 +6,7 @@
     <h2><%=@car.model%></h2>
   </div>
   <h2 class="card-car-pricing">£<%=@car.price%>p/d</h2>
+  <%= link_to "Book Car", new_car_booking_path(@car), class: "btn btn-primary" %>
   <%= link_to "Edit Car Details", edit_car_path, class: "btn btn-primary" %>
   <%= link_to "Back to all cars", cars_path, class: "btn btn-primary"%>
   <%= link_to "Delete Car", car_path(@car), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
