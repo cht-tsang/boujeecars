@@ -3,14 +3,19 @@ class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @cars = Car.all
+    if params[:query].present?
+      @query = params[:query]
+      @cars = Car.where("make iLike '%#{params[:query]}%' OR model iLike '%#{params[:query]}%'")
+    else
+      @cars = Car.all
+    end
   end
     
-   def show
+  def show
     @car = Car.find(params[:id])
-   end
+  end
 
-   def new
+  def new
     @car = Car.new
   end
 
