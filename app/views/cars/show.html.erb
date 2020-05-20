@@ -1,15 +1,17 @@
 <div class="card-car">
-  <%= cl_image_tag @car.photo.key %>
+  <%= cl_image_tag @car.photo.key, class: "image-car" %>
   <div class="card-car-infos">
   <div>
     <h1><%=@car.make%> </h1>
     <h2><%=@car.model%></h2>
+    <h3>£<%=@car.price%>p/d</h3>
   </div>
-  <h2 class="card-car-pricing">£<%=@car.price%>p/d</h2>
+
   <%= link_to "Book Car", new_car_booking_path(@car), class: "btn btn-primary" %>
   <%= link_to "Edit Car Details", edit_car_path, class: "btn btn-primary" %>
   <%= link_to "Back to all cars", cars_path, class: "btn btn-primary"%>
   <%= link_to "Delete Car", car_path(@car), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+</div>
 </div>
 
 
