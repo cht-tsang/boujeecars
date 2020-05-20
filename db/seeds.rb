@@ -9,6 +9,7 @@ require "open-uri"
 require "date"
 
 file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+
 car = Car.new(make: 'NES', model: "A great console", price: 200, user: User.last)
 car.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 car.save
@@ -16,3 +17,4 @@ car.save
 booking = Booking.new(start_date: Date.today,end_date: Date.today, user: User.last, car: car)
 
 booking.save
+
