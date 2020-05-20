@@ -1,0 +1,19 @@
+<h1> Booking </h1>
+<div class="card-car">
+  <%= cl_image_tag @booking.car.photo.key %>
+  
+  <div class="card-car-infos">
+
+    <div>
+      <h2>Start date: <%= @booking.start_date %> </h2>
+      <h2>End Date: <%= @booking.end_date %></h2>
+      <h2>Car Make: <%= @booking.car.make %></h2>
+      <h2>Car Model: <%= @booking.car.model %></h2>
+      <h2>Car Price: £<%= @booking.car.price %>p/d</h2>
+    </div>
+  
+    <%= link_to "Edit Booking Details", edit_car_booking_path, class: "btn btn-primary" %>
+    <%= link_to "Back to all bookings", car_bookings_path, class: "btn btn-primary"%>
+    <%= link_to "Delete Booking", booking_path(@booking), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+  </div>
+</div>

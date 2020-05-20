@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 require "open-uri"
 require "date"
 
@@ -17,4 +18,5 @@ car.save
 booking = Booking.new(start_date: Date.today,end_date: Date.today, user: User.last, car: car)
 
 booking.save
+
 
