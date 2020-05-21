@@ -14,7 +14,7 @@
         
       </div>
 
-      <div class="cards">
+      <div class="cards offset-md-1">
         <% @cars.each do |car| %>
           <%= link_to car_path(car) do %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path car.photo.key, height: 300, width: 400, crop: :fill %>')">
