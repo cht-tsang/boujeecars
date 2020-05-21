@@ -1,19 +1,29 @@
-<div class="search-container">
-  <form class="form-inline my-6 my-lg-2">
-    <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search" value="<%= params[:query] %>">
-    <button class="btn btn-outline-primary my-8 my-sm-4" type="submit">Search</button>
-  </form>
-</div>
 
-<div class="cards">
-  <% @cars.each do |car| %>
-    <%= link_to car_path(car) do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path car.photo.key, height: 300, width: 400, crop: :fill %>')">
-        <%= car.make %>
-        <%= car.model %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <%= form_tag cars_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search vehicles"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+
+
+      <div class="cards">
+        <% @cars.each do |car| %>
+          <%= link_to car_path(car) do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path car.photo.key, height: 300, width: 400, crop: :fill %>')">
+              <%= car.make %>
+              <%= car.model %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
 </div>
 
 <%# <%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>
