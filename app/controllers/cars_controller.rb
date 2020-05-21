@@ -3,12 +3,23 @@ class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+
+    @cars = Car.geocoded
+
+    @markers = @cars.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude
+      }
+    end
+
     if params[:query].present?
       @query = params[:query]
       @cars = Car.where("make iLike '%#{params[:query]}%' OR model iLike '%#{params[:query]}%'")
     else
       @cars = Car.all
     end
+
   end
     
   def show
