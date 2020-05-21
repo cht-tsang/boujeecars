@@ -1,8 +1,32 @@
-<h2>My Bookings</h2>
-<div class="cards">
-  <% @bookings.each do |booking| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.car.photo.key, height: 300, width: 400, crop: :fill %>')">
-      <%= link_to booking.car.make + " " + booking.car.model + " Booking", car_booking_path(booking.car_id, booking) %>
+<div class="container">
+  <h2>My Bookings</h2>
+    <% @bookings.each do |booking| %>
+    <div class="card-car">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.car.photo.key, height: 300, width: 400, crop: :fill %>')">
+        <%= link_to booking.car.make + " " + booking.car.model, car_booking_path(booking.car_id, booking) %>
       </div>
-  <% end %>
+
+      <div class="card-car-infos">
+        <h2>Start date: <%= booking.start_date.strftime("%d / %m / %Y") %> </h2>
+        <h2>End Date: <%= booking.end_date.strftime(" %d / %m / %Y") %></h2>
+      </div>
+    </div>
+    <% end %>
+  
+</div>
+
+<div class="container">
+  <h2>My Cars</h2>
+      <% @cars.each do |car| %>
+      <div class="card-car">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path car.photo.key, height: 300, width: 400, crop: :fill %>')">
+          <%= link_to car.make + " " + car.model, car_path(car) %>
+        </div>
+
+        <div class="card-car-infos my-2">
+          <%= link_to "Edit Car Details", edit_car_path(car), class: "btn btn-primary" %>
+          <%= link_to "Delete Car", car_path(car), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+        </div>
+      </div>
+      <% end %>      
 </div>
