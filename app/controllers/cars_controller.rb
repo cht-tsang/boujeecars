@@ -9,13 +9,14 @@ class CarsController < ApplicationController
     @markers = @cars.map do |car|
       {
         lat: car.latitude,
-        lng: car.longitude
+        lng: car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { car: car })
       }
     end
 
     if params[:query].present?
-      @query = params[:query]
-      @cars = Car.where("make iLike '%#{params[:query]}%' OR model iLike '%#{params[:query]}%'")
+      # @cars = Car.where("make iLike '%#{params[:query]}%' OR model iLike '%#{params[:query]}%'")
+      @cars = Car.search_by_make_and_model(params[:query])
     else
       @cars = Car.all
     end
