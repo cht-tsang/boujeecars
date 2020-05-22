@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <% form_tag cars_path, method: :get, style: "display: flex;" do %>
+        <%= form_tag cars_path, method: :get, style: "display: flex;" do %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control my-4",
