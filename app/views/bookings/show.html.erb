@@ -9,7 +9,8 @@
       <h2>End Date: <%= @booking.end_date.strftime(" %d / %m / %Y") %></h2>
       <h2>Car Make: <%= @booking.car.make %></h2>
       <h2>Car Model: <%= @booking.car.model %></h2>
-      <h2>Car Price: £<%= @booking.car.price %>p/d</h2>
+      <% total_days = (@booking.end_date - @booking.start_date) / 3600 / 24 %> 
+      <h2>Total Price: £<%= total_days * @booking.car.price %></h2>
     </div>
   
     <%= link_to "Edit Booking Details", edit_car_booking_path, class: "btn btn-primary" %>
