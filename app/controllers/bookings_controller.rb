@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
     @booking.car = @car
     @booking.user = current_user
     if @booking.save
+      flash[:alert] = 'Booking Successfull!'
       redirect_to car_booking_path(@car, @booking)
     else
       render :new
