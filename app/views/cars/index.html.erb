@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <%= form_tag cars_path, method: :get, style: "display: flex;" do %>
+        <% form_tag cars_path, method: :get, style: "display: flex;" do %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control my-4",
@@ -17,7 +17,7 @@
       <div class="cards">
         <% @cars.each do |car| %>
           <%= link_to car_path(car) do %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path car.photo.key, height: 300, width: 400, crop: :fill %>')">
+            <div class="card-category search" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path car.photo.key, height: 300, width: 400, crop: :fill %>')">
               <h2><%= car.make %></h2>
               <h2><%= car.model %></h2>
               <p>£<%= car.price %>/day</p>
@@ -30,7 +30,7 @@
 
   </div>
 
-  <div id="map"
+  <div id="map" class="mt-4 rounded-left"
       style="width: 100%; height: 100vh;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
