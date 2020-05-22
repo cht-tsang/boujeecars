@@ -13,7 +13,7 @@ class Car < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_make_and_model,
-    against: [ :make, :model ],
+    against: [ :make, :model, :address ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
