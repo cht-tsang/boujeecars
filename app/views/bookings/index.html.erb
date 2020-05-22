@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>My Bookings</h2>
+  <h2 class = "text-colour">My Bookings</h2>
     <% @bookings.each do |booking| %>
     <div class="card-car">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.car.photo.key, height: 300, width: 400, crop: :fill %>')">
@@ -12,11 +12,11 @@
       </div>
     </div>
     <% end %>
-  
+
 </div>
 
 <div class="container">
-  <h2>My Cars</h2>
+  <h2 class = "text-colour">My Cars</h2>
       <% @cars.each do |car| %>
       <div class="card-car">
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path car.photo.key, height: 300, width: 400, crop: :fill %>')">
@@ -28,5 +28,5 @@
           <%= link_to "Delete Car", car_path(car), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
         </div>
       </div>
-      <% end %>      
+      <% end %>
 </div>
