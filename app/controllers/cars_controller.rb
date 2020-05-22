@@ -54,7 +54,7 @@ class CarsController < ApplicationController
   def destroy
     @car = Car.find(params[:id])
     @car.destroy
-    redirect_to cars_path
+    redirect_to bookings_path
   end
   
   private
